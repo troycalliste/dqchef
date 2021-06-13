@@ -1,0 +1,207 @@
+<div class="wrap">
+  <div class="contactback abg">
+
+
+  <div class="navcon">
+<div class="grnav"></div>
+    <div class="nav">
+      <div class="navi left">
+        <div class="leftcontact brn"><span><i class="far fa-envelope"></i></span><p>&nbsp;chefdturner32@gmail.com</p></div>
+      </div>
+      <div class="navi mid">
+        <ul class="menu cmenu ari brn">
+          <li><a href="/services">Services</a></li>
+          <li><a href="/about">About</a></li>
+          <a href="/"><li><%= image_tag("slogo.png") %></li></a>
+          <li><a href="/gallery">Gallery</a></li>
+          <li><a href="/contact" data-no-turbolink="true">Contact</a></li>
+        </ul>
+      </div>
+      <div class="navi right">
+        <a href="/contact"><div class="menubtn aribold brnb">BOOK US</div></a>
+      </div>
+    </div>
+    </div>
+
+    <div class="mobilenav">
+      <div class="mobileimg"><%= image_tag("slogo.png") %></div>
+      <div class="mobileicon"><i class="fas fa-ellipsis-v"></i></div>
+    </div>
+
+    <div class="mobilego">
+      <div class="item"><span class="mlclose"><i class="fas fa-times"></i>&nbsp</span></div>
+      <div class="item"> <span class="ml ab"><%= link_to "Welcome", "/" %></span></div>
+      <div class="item"> <span class="ml"><%= link_to "Services", "/services" %></span></div>
+      <div class="item"> <span class="ml"><%= link_to "Gallery", "/gallery" %></span></div>
+      <div class="item"> <span class="ml ab"><%= link_to "Menu", "/menu" %></span></div>
+      <div class="item"> <span class="ml"><%= link_to "Contact", "/contact", data: { turbolinks: false } %></span></div>
+      </div>
+  <div class="dark"></div>
+
+
+    <div class="headercontentwrap">
+
+  <div class="backimg">
+    <div class="backimgcenter"></div>
+  </div>
+
+  <div class="upperbacktext brfont">
+    <p id="notice"><%= notice %></p>
+    <h1>More About Us</h1>
+  </div>
+  <div class="lowerbacktext ari  brlow">Get to know the chef..</div>
+
+  </div>
+
+</div>
+
+
+<div class="aboutmeet">
+  <div class="greentxt">Biography</div>
+  <h3>Meet the Chef</h3>
+</div>
+<div class="aboutcontent">
+  <div class="textwrap">
+   <%= image_tag("aboutpic.jpg") %>
+  </div>
+  <p class="pc">
+    At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
+    <br>
+    <br>
+    Nam libero tempore, soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
+    <br>
+    <br>
+    Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.
+    </p>
+</div>
+
+
+
+
+
+<div class="aboutmeet">
+
+  <h3>Leave a Review</h3>
+</div>
+
+<div class="ao">
+  <div class="rate">
+    <div class="rateleft">
+      <div class="rateleftcenter">
+    <ul class="ratelist">
+      <li class="rateitem"><i class="fas fa-star"></i></li>
+      <li class="rateitem"><i class="fas fa-star"></i></li>
+      <li class="rateitem"><i class="fas fa-star"></i></li>
+      <li class="rateitem"><i class="fas fa-star"></i></li>
+      <li class="rateitem"><i class="fas fa-star"></i></li>
+    </ul>
+
+  <div class="ratefieldwrap">
+    <%= form_with(model: @rating, local: true) do |form| %>
+
+    <div class="ratefield">
+    <%= form.text_field :name, class: "rateinput", id: "namefield", placeholder: "Name" %>
+    </div>
+    <div class="ratefield">
+    <%= form.text_field :location, class: "rateinput", id: "locationfield", placeholder: "Location" %>
+    </div>
+    <div class="ratefield">
+    <%= form.text_area :message, class: "rateinput", id: "messagefield", placeholder: "Write a Testimonial" %>
+    </div>
+    <div class="ratefield nobgc">
+
+    </div>
+    <div class="vpr"><p>Post Review</p></div>
+
+    <% end %>
+
+  </div>
+</div>
+</div>
+<div class="rateright">
+  <div class="raterightcenter">
+
+
+<% @ratings.each do |r| %>
+<div class="reviewwrap">
+    <div class="rrleft">
+      <h2><%= r.name %></h2>
+      <h3><%= r.location%></h3>
+    </div>
+    <div class="rrother">
+      <div class="upperother">
+        <% if r.rated == 1 %>
+      <%= render "onestar" %>
+      <% elsif r.rated == 2 %>
+      <%= render "twostar" %>
+      <% elsif r.rated == 3 %>
+      <%= render "threestar" %>
+      <% elsif r.rated == 4 %>
+      <p>lok</p>
+      <%= render "fourstar" %>
+      <% elsif r.rated == 5 %>
+      <%= render "fivestar" %>
+      <% end %>
+      <span><%= r.created_at.strftime("%m/%d/%Y") %></span>
+      </div>
+
+     <div class="review">
+       <%= r.message %>
+     </div>
+    </div>
+</div>
+
+<% end %>
+
+
+
+  </div>
+</div>
+
+  </div>
+</div>
+
+
+
+
+<div class="emailsub">
+  <div class="emailhead">
+At Your Service
+  </div>
+  <a href="/contact"><div class="emailbtn">BOOK NOW</div></a>
+</div>
+
+
+<div class="footer">
+  <div class="footerlimit">
+  <div class="footertop">
+    <div class="footerpart flogo">
+      <div class="mobilelogocent">
+<%= image_tag("slogo.png") %>
+      </div>
+    </div>
+    <div class="footerpart flist">
+      <ul class="onehun ari whit">
+        <li><a href="/">Welcome</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/menu">Menu</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footerpart infof whit">
+      <div class=" finfo whit">
+      <span><i class="far fa-envelope"></i></span>&nbsp;chefdturner32@gmail.com
+      </div>
+    </div>
+  </div>
+  <div class="footermid whit">
+    <a href="https://www.instagram.com/condokitchenage/"><i class="fab fa-instagram"></i></a> &nbsp;<i class="fab fa-facebook-f"></i>
+  </div>
+
+  <div class="footerlow whit">
+      Chef Domo Catering
+  </div>
+  </div>
+  </div>
+
+  </div>

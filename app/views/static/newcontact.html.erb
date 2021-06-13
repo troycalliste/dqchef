@@ -1,0 +1,113 @@
+<div class="wrap">
+  <div class="scan">
+    <h1>Contact</h1>
+  </div>
+<div class="backhome">
+  <div class="nnback">
+  <%= render "homepage"%>
+  </div>
+</div>
+<div class="abovehomewrap">
+  <div class="newserviceback">
+    <div class="newnav">
+      <a href="/"><div class="newlogo"><%= image_tag("darklogo.png") %></div></a>
+      <ul class="newnavul tint">
+        <a href="/"><li>Home</li></a>
+        <a href="/comingsoon"><li>Experience</li></a>
+        <a href="/services"><li>Services</li></a>
+        <a href="/about"><li>About</li></a>
+        <a href="/contact"><li>Contact</li></a>
+      </ul>
+      <ul class="newsocul tint">
+        <li><i class="fab fa-instagram"></i></li>
+        <li><i class="far fa-envelope"></i></li>
+      </ul>
+    </div>
+    <div class="newcontactone">
+      <div class="ncoleft">
+            <%= image_tag("contactpic.jpg") %>
+      </div>
+      <div class="ncoright">
+          <%= form_with(model: @inquiry, local: true) do |form| %>
+          <div class="newnamewrap">
+            <div class="wwrap">
+            <p>Name*</p>
+            <div class="nniwrap">
+          <%= form.text_field :name, class: "newnameinput", required: "required" %>
+        </div>
+        <p class="newsmallp">First Name</p>
+          </div>
+          <div class="wwrap">
+            <p>&nbsp;</p>
+          <div class="nniwrap">
+          <%= form.text_field :name, class: "newnameinput", required: "required" %>
+          </div>
+          <p class="newsmallp">Last Name</p>
+          </div>
+          </div>
+          <div class="fwrap">
+            <p>Email Address*</p>
+          <div class="nniwrap">
+          <%= form.text_field :name, class: "newnameinput", required: "required" %>
+          </div>
+          </div>
+          <div class="fwrap">
+            <p>Subject*</p>
+          <div class="nniwrap">
+          <%= form.text_field :name, class: "newnameinput", required: "required" %>
+          </div>
+          </div>
+
+          <div class="fwrap">
+            <p>Message*</p>
+          <div class="nniwrap">
+          <%= form.text_area :name, class: "newnameta", required: "required" %>
+          </div>
+          </div>
+
+
+
+      <%= form.text_field :name, class: "contforminput", placeholder: "Your Name*", required: "required" %>
+      <%= form.telephone_field :phone, class: "contforminput", placeholder: "Phone Number", required: "required" %>
+    <button type="submit" class="newbtn">
+        submit
+    </button>
+    <% end %>
+      </div>
+
+      </div>
+
+
+
+      </div>
+
+
+
+      <div class="newfooter">
+      <div class="nfpart">
+        <p class="italic">Contact</p>
+        <p class="italic">chefdturner32@gmail.com</p>
+        <p>Washington D.C. </p>
+        <p class="grayitalic italic">Contact</p>
+      </div>
+      <div class="nfpart">
+        <div class="nfhone"><h1>— &nbsp;CHEF DOMO &nbsp;—</h1></div>
+        <div class="nflogo"><%= image_tag("darklogo.png")%></div>
+        <div class="nfsocial">
+          <i class="fab fa-instagram"></i>&nbsp;<i class="fab fa-facebook-f"></i>&nbsp;<i class="far fa-envelope"></i>
+        </div>
+        <p class="notblack">Site by <a href="http://instagram.com/troymedia.digital">TM Digital</a> </p>
+      </div>
+      <div class="nfpart">
+        <p class="italic nobottom">Culinary Artist</p>
+      <div class="smline"></div>
+      </div>
+      </div>
+
+
+
+    </div>
+
+
+
+</div>

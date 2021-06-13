@@ -1,0 +1,169 @@
+<div class="wrap">
+  <div class="contactback">
+  <div class="navcon">
+<div class="grnav"></div>
+    <div class="nav">
+      <div class="navi left">
+        <div class="leftcontact brn"><span><i class="far fa-envelope"></i></span>&nbsp;chefdturner32@gmail.com</div>
+      </div>
+      <div class="navi mid">
+        <ul class="menu cmenu ari brn">
+          <li class="brn"><a href="/services">Services</a></li>
+          <li><a href="/about">About</a></li>
+          <a href="/"><li><%= image_tag("slogo.png") %></li></a>
+          <li class="brn"><a href="/gallery">Gallery</a></li>
+          <li class="brn"><a href="/contact" data-no-turbolink="true">Contact</a></li>
+        </ul>
+      </div>
+      <div class="navi right">
+        <a href="/contact"><div class="menubtn aribold brnb">BOOK US</div></a>
+      </div>
+    </div>
+    </div>
+
+    <div class="mobilenav">
+      <div class="mobileimg"><%= image_tag("slogo.png") %></div>
+      <div class="mobileicon"><i class="fas fa-ellipsis-v"></i></div>
+    </div>
+
+    <div class="mobilego">
+      <div class="item"><span class="mlclose"><i class="fas fa-times"></i>&nbsp</span></div>
+      <div class="item"> <span class="ml ab"><%= link_to "Welcome", "/" %></span></div>
+      <div class="item"> <span class="ml"><%= link_to "Services", "/services" %></span></div>
+      <div class="item"> <span class="ml"><%= link_to "Gallery", "/gallery" %></span></div>
+      <div class="item"> <span class="ml ab"><%= link_to "Menu", "/menu" %></span></div>
+      <div class="item"> <span class="ml"><%= link_to "Contact", "/contact", data: { turbolinks: false } %></span></div>
+      </div>
+  <div class="dark"></div>
+
+
+    <div class="headercontentwrap">
+
+  <div class="backimg">
+    <div class="backimgcenter"></div>
+  </div>
+
+  <div class="upperbacktext brfont">
+    <p id="notice"><%= notice %></p>
+    <h1>Get in Touch</h1>
+  </div>
+  <div class="lowerbacktext ari  brlow">Scroll to bottom for booking form...</div>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
+<div class="mapcontain">
+  <iframe src="https://maps.google.com/maps?q=washington%20dc&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+<div class="maplimit">
+  <div class="mapright">
+    <div class="contactbox">
+      <div class="centercon">
+    <div class="contacthead"> Where We Are</div>
+    <div class="contactmidleft">
+      <ul class="leftlist">
+        <li>Our City:</li>
+        <li>Phone:</li>
+        <li>Email: </li>
+
+      </ul>
+
+    </div>
+    <div class="contactmidright">
+      <ul class="rightlist">
+        <li>Washington, D.C.</li>
+        <li>(555) 555-5555</li>
+        <li>chefdturner32@gmail.com</li>
+      </ul>
+    </div>
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="contactform">
+  <div class="contactlimit">
+
+  <div class="inqhead">
+    Let's make your next dinner something to remember.
+  </div>
+  <div class="inqtext">
+    Fill in your details and we will contact you.
+  </div>
+
+    <div class="contactformwrap">
+      <%= form_with(model: @inquiry, local: true) do |form| %>
+      <div class="conthalf">
+      <div class="contholder">
+      <%= form.text_field :name, class: "contforminput", placeholder: "Your Name*", required: "required" %>
+      </div>
+      </div><div class="conthalf">
+      <div class="contholder">
+      <%= form.telephone_field :phone, class: "contforminput", placeholder: "Phone Number", required: "required" %>
+      </div>
+      </div>
+
+  </div>
+    <button type="submit" class="inqbtn">
+        <i class="far fa-file-alt"></i> &nbsp;&nbsp;BOOK US
+    </button>
+    <% end %>
+
+
+
+
+
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="footer gra">
+  <div class="footerlimit">
+  <div class="footertop">
+    <div class="footerpart flogo">
+      <div class="mobilelogocent">
+<%= image_tag("slogo.png") %>
+      </div>
+    </div>
+    <div class="footerpart flist">
+      <ul class="onehun ari whit">
+        <li><a href="/">Welcome</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/menu">Menu</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footerpart infof whit">
+      <div class=" finfo whit">
+      <span><i class="far fa-envelope"></i></span>&nbsp;chefdturner32@gmail.com
+      </div>
+    </div>
+  </div>
+  <div class="footermid whit">
+    <a href="https://www.instagram.com/condokitchenage/"><i class="fab fa-instagram"></i></a> &nbsp;<i class="fab fa-facebook-f"></i>
+  </div>
+
+  <div class="footerlow whit">
+      Chef Domo Catering
+  </div>
+  </div>
+  </div>
+
+
+</div>
